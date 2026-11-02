@@ -1,0 +1,11 @@
+{
+  "framework": null,
+  "installCommand": "npm ci --prefix website && npm ci --prefix app",
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/app/api/ctgov/:path*", "destination": "/api/ctgov?path=:path*" },
+    { "source": "/app", "destination": "/app/index.html" },
+    { "source": "/app/((?!assets/).*)", "destination": "/app/index.html" }
+  ]
+}

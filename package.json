@@ -1,0 +1,11 @@
+{
+  "name": "findmytrial",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build --prefix website && npm run build --prefix app",
+    "start": "node serve.mjs",
+    "test": "node --test ctgov-proxy.test.mjs",
+    "build:vercel": "npm run build && rm -rf dist && cp -R website/dist dist && cp -R app/dist dist/app"
+  }
+}
